@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="dao.UserDao">
+	<!-- 类属性和表字段不匹配时 -->
+	<resultMap type="entity.User" id="tab_user">
+		<result property="userName" column="user_name"/>
+	</resultMap>
 	<insert id="insertUser">
-		INSERT users VALUES(NULL, #{name}, #{city})
+		INSERT users VALUES(NULL, #{userName}, #{city})
 	</insert>
-	<delete id="deleteUserById">
+	<delete id="deleteUser">
 		DELETE FROM users WHERE id = #{id}
 	</delete>
 	<update id="updateUserCity">
 		UPDATE users SET city = #{city} WHERE id = #{id}
 	</update>
-	<select id="getUserById" resultType="entity.User">
-		SELECT id, name, city FROM users WHERE id = #{id} 
+	<select id="getUser" resultType="entity.User" resultMap="tab_user">
+		SELECT id, user_name, city FROM users WHERE id = #{id} 
 	</select>
-	<select id="getAllUsers" resultType="entity.User">
-		SELECT id, name, city FROM users
+	<select id="getAllUsers" resultType="entity.User" resultMap="tab_user">
+		SELECT * FROM users
 	</select>
 </mapper>
