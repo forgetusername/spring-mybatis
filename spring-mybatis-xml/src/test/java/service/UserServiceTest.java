@@ -13,7 +13,7 @@ public class UserServiceTest {
 
 	@Autowired
 	private UserService userService;
-	
+	 
 	@Test
 	public void testInsert() {
 		userService.insert();

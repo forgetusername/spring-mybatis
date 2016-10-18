@@ -8,7 +8,7 @@
 	<insert id="insertUser">
 		INSERT users VALUES(NULL, #{userName}, #{city})
 	</insert>
-	<delete id="deleteUser">
+	<delete id="deleteUser"> 
 		DELETE FROM users WHERE id = #{id}
 	</delete>
 	<update id="updateUserCity">

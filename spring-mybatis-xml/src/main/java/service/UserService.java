@@ -17,5 +17,5 @@ public class UserService {
 		userDao.insertUser("test01", "HK");
 //		"".substring(11); // will rollback
 	} 
-	
+	 
 }

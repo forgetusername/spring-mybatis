@@ -10,7 +10,7 @@ public interface UserDao {
 
 	/**
 	 * 插入
-	 * @param name 名字
+	 * @param name 名字 
 	 * @param city 城市
 	 */
 	public void insertUser(@Param("userName") String userName, @Param("city") String city);

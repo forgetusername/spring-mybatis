@@ -17,7 +17,7 @@ public class UserDaoTest {
 	
 	@Autowired
 	private UserDao userDao; 
-
+ 
 	@Test
 	@Ignore
 	public void testInsertUser() {
