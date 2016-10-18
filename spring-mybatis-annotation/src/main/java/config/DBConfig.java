@@ -30,7 +30,7 @@ public class DBConfig {
 	@Value("${mysql.connection.password}")
 	private String password;
 	
-	@Bean
+	@Bean(destroyMethod = "")
 	public DataSource dataSource() {
 		try {
 			ComboPooledDataSource dataSource = new ComboPooledDataSource();
@@ -45,10 +45,10 @@ public class DBConfig {
 	}
 	
 	@Bean
-	public SqlSessionFactory sqlSessionFactory(@Autowired DataSource dataSource) throws Exception {
+	public SqlSessionFactoryBean sqlSessionFactory(@Autowired DataSource dataSource) throws Exception {
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
 		sqlSessionFactoryBean.setDataSource(dataSource);
-		return sqlSessionFactoryBean.getObject();
+		return sqlSessionFactoryBean;
 	}
 	
 	@Bean
