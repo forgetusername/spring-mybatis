@@ -19,5 +19,5 @@
 	</select>
 	<select id="getAllUsers" resultType="entity.User" resultMap="tab_user">
 		SELECT * FROM users
-	</select>
+	</select> 
 </mapper>

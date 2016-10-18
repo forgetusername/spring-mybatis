@@ -17,7 +17,7 @@
 				<value>db.properties</value>
 			</list>
 		</property>
-	</bean>
+	</bean> 
 	<!-- data source -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="driverClass" value="${mysql.connection.driver}" />
