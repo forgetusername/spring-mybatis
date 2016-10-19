@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 
 import entity.Order;
 
-@Component
 public interface OrderMapper {
 
 	/* 字段不同可以使用别名 */
